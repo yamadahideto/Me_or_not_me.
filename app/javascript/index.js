@@ -1,11 +1,11 @@
 document.addEventListener("turbo:load", () => {
-  const slideBtn = document.getElementById("slideBtn");
   const image = document.getElementById("bananaimage");
+  const content = document.querySelector("#content");
+  const duration = Number(content.dataset.duration);
+  const answerBtn = document.getElementById("answer_button");
 
-  slideBtn.addEventListener("click", () => {
-    // 画像を表示する
+  setTimeout(() => {
     image.style.opacity = 1;
-
     // スライドアニメーションを実行
     const animation = image.animate(
       [
@@ -14,13 +14,14 @@ document.addEventListener("turbo:load", () => {
       ],
       {
         fill: "forwards", // 再生後も最終状態を保持
-        duration: 2000, // アニメーションの時間
+        duration: duration, // アニメーションの時間
       }
     );
 
     // アニメーション終了時に非表示にする
     animation.onfinish = () => {
       image.style.opacity = 0; // 再び非表示に
+      answerBtn.disabled = false;
     };
-  });
+  }, 1500);
 });

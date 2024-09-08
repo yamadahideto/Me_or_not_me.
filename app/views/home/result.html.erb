@@ -1,0 +1,21 @@
+<div
+  class="hero min-h-screen">
+  <div class="hero-overlay bg-opacity-60"></div>
+  <div class="hero-content text-neutral-content text-center">
+    <div class="max-w-md">
+      <h1 class="mb-5 text-5xl font-bold"> <%= @result %>問正解 </h1>
+      <%= image_tag 'yellow_boy_correct' %>
+      <p> 「俺の行き着く先は全部星付きレストラン。何故なら俺様がスターだからね。」 </p>
+      <div class = "flex mx-auto">
+        <%= link_to root_path do %>
+          <button class="btn btn-primary mx-5" id = "slideBtn"> 最初に戻る </button>
+        <% end %>
+        <%= link_to stage_path do %>
+          <button class="btn btn-primary bg-black" id = "slideBtn"> Xで共有 </button>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= javascript_include_tag "index.js", "data-turbo-track": "reload", type: "module" %>
