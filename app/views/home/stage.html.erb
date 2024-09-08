@@ -1,0 +1,48 @@
+<div
+  class="hero min-h-screen"
+  style="background-image: url(<%= image_path('background_banana.webp') %>);">
+  <div class="hero-overlay bg-opacity-60"></div>
+  <div class="hero-content text-neutral-content text-center">
+    <div class="max-w-md">
+      <h1 class="mb-5 text-5xl font-bold"> ステージ <%= @stage %>/5 </h1>
+      <button class="btn btn-primary" id = "slideBtn"> スライド </button>
+
+      <div class = "flex items-center">
+        <div class = "mx-auto w-96 h-60 bg-white" id = "square">
+        </div>
+        <%= image_tag "#{@image}", size: '60x60', id: "bananaimage", class: "opacity-0" %>
+      </div>
+
+        <div class="form-control">
+          <label class="label cursor-pointer">
+            <span class="label-text text-white"> <%= @choices[0] %> </span>
+            <input type="radio" name="radio-10" class="radio checked:bg-red-500" checked="checked" />
+          </label>
+        </div>
+        <div class="form-control">
+          <label class="label cursor-pointer">
+            <span class="label-text text-white"> <%= @choices[1] %> </span>
+            <input type="radio" name="radio-10" class="radio checked:bg-blue-500" checked="checked" />
+          </label>
+        </div>
+
+        <div class="form-control">
+          <label class="label cursor-pointer">
+            <span class="label-text text-white"> <%= @choices[2] %> </span>
+            <input type="radio" name="radio-10" class="radio checked:bg-blue-500" checked="checked" />
+          </label>
+        </div>
+
+        <div class="form-control">
+          <label class="label cursor-pointer">
+            <span class="label-text text-white"> <%= @choices[3] %> </span>
+            <input type="radio" name="radio-10" class="radio checked:bg-blue-500" checked="checked" />
+          </label>
+        </div>
+
+      <button class="btn btn-primary"> バナナの本数はこれだ！！ </button>
+    </div>
+  </div>
+</div>
+
+<%= javascript_include_tag "index.js", "data-turbo-track": "reload", type: "module" %>
