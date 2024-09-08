@@ -4,14 +4,18 @@
   <div class="hero-content text-neutral-content text-center">
     <div class="max-w-md">
       <h1 class="mb-5 text-5xl font-bold"> <%= @result %>問正解 </h1>
-      <%= image_tag 'yellow_boy_correct' %>
+      <%= image_tag 'yellow_boy_correct', class: "mx-auto" %>
       <p> 「俺の行き着く先は全部星付きレストラン。何故なら俺様がスターだからね。」 </p>
-      <div class = "flex mx-auto">
+      <div class = "flex justify-center items-center space-x-4 mt-4 mx-auto">
         <%= link_to root_path do %>
-          <button class="btn btn-primary mx-5" id = "slideBtn"> 最初に戻る </button>
+          <button class="btn btn-primary" id = "slideBtn"> 最初に戻る </button>
         <% end %>
-        <%= link_to stage_path do %>
-          <button class="btn btn-primary bg-black" id = "slideBtn"> Xで共有 </button>
+
+        <%= link_to "https://x.com/intent/tweet?url=https://me-or-not-me.onrender.com/&text=俺か俺以外か", target: '_blank' do %>
+          <button class="btn bg-gray-800 text-white my-3">
+            <svg class="text-gray-900"  width="24" height="24" viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round" ><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4l11.733 16h4.267l-11.733 -16z" /><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" /> </svg>
+            <h2>共有</h2>
+          </button>
         <% end %>
       </div>
     </div>
