@@ -1,4 +1,5 @@
 module ApplicationHelper
+
   def default_meta_tags
     {
       site: 'Me or not me.',
@@ -19,11 +20,12 @@ module ApplicationHelper
       },
       # Twitter用の設定を個別で設定する
       twitter: {
-        title: '俺か俺以外か'
+        title: '俺か俺以外か',
         card: 'summary_large_image', # Twitterで表示する場合は大きいカードにする
         site: '@', # アプリの公式Twitterアカウントがあれば、アカウント名を書く
         image: image_url('yellow_boy_correct.png') # 配置するパスやファイル名によって変更すること
       }
     }
   end
+
 end
