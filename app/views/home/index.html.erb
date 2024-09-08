@@ -1,12 +1,14 @@
-<div
-  class="hero min-h-screen bg-black">
+<div class="hero min-h-screen" style="background-image: url(<%= image_path('background.png') %>);">
   <div class="hero-overlay bg-opacity-60"></div>
   <div class="hero-content text-neutral-content text-center">
     <div class="max-w-md">
-      <h1 class="mb-5 text-5xl font-bold"> 俺か 俺以外か？ </h1>
-      <%= image_tag 'yellow_boy_correct' %>
-      <p> 世の中には、2種類の男しかいない。俺か、俺か以外か </p>
-      <p> 君は俺か俺以外かが見分けることができるかな？ </p>
+      <h1 class="mb-5 text-5xl font-bold"> 俺か 俺以外か </h1>
+      <%= image_tag 'yellow_boy_correct', class: "mx-auto" %>
+      <div class = "my-5">
+        <p class = "text-xl my-2" > 世の中には、2種類の男しかいない </p>
+        <p class = "text-xl my-2" > 俺か、俺か以外か </p>
+        <p class = "text-xl my-2" > 見分けることができるかな？ </p>
+      </div>
       <%= link_to stage_path do %>
         <button class="btn btn-primary" id = "slideBtn"> 見分けにいく </button>
       <% end %>

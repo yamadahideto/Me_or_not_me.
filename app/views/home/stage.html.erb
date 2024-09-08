@@ -1,5 +1,4 @@
-<div
-  class="hero min-h-screen bg-black">
+<div class="hero min-h-screen" style="background-image: url(<%= image_path('background.png') %>);">
   <div class="hero-overlay bg-opacity-60"></div>
   <div class="hero-content text-neutral-content text-center">
     <div class="max-w-md">
@@ -8,21 +7,21 @@
       <div class = "flex items-center" id = "content" data-duration = <%= @duration %>>
         <div class = "mx-auto w-96 h-60 bg-white" id = "square">
         </div>
-        <%= image_tag "#{@image}", size: '60x60', id: "bananaimage", class: "opacity-0" %>
+        <%= image_tag "#{@image}", size: '100x100', id: "bananaimage", class: "opacity-0" %>
       </div>
 
      <%# ラジオボタンフォーム %>
       <%= form_with url: answers_path, local: true do |f| %>
-        <div class="form-control">
+        <div class="form-control my-5">
           <label class="label cursor-pointer">
-            <span class="label-text text-white"> <%= @choices[0] %> </span>
+            <span class="label-text text-white text-2xl"> <%= @choices[0] %> </span>
             <%= f.radio_button :user_choice, @choices[0], class: "radio checked:bg-red-500", checked: true %>
           </label>
         </div>
 
         <div class="form-control">
           <label class="label cursor-pointer">
-            <span class="label-text text-white"> <%= @choices[1] %> </span>
+            <span class="label-text text-white text-2xl"> <%= @choices[1] %> </span>
             <%= f.radio_button :user_choice, @choices[1], class: "radio checked:bg-yellow-500", checked: true %>
           </label>
         </div>
