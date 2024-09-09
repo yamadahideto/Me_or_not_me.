@@ -16,7 +16,7 @@ class HomeController < ApplicationController
   def banana_image(stage)
     case stage
     when 1 then 'yellow_boy2.png'
-    when 2 then 'yellow_boy4.png'
+    when 2 then 'yellow_boy3.png'
     when 3 then 'yellow_boy1.png'
     when 4 then 'yellow_boy3.png'
     when 5 then 'yellow_boy5.png'
@@ -63,11 +63,11 @@ class HomeController < ApplicationController
 
   def get_duration(stage)
     case stage
-      when 1 then 800
-      when 2 then 600
-      when 3 then 400
-      when 4 then 200
-      when 5 then 2000
+      when 1 then 500
+      when 2 then 400
+      when 3 then 200
+      when 4 then 100
+      when 5 then 600
     end
   end
 
