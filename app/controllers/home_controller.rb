@@ -15,10 +15,10 @@ class HomeController < ApplicationController
   # バナナの画像を管理
   def banana_image(stage)
     case stage
-    when 1 then 'yellow_boy1.png'
-    when 2 then 'yellow_boy_correct.png'
-    when 3 then 'yellow_boy3.png'
-    when 4 then 'yellow_boy4.png'
+    when 1 then 'yellow_boy2.png'
+    when 2 then 'yellow_boy4.png'
+    when 3 then 'yellow_boy1.png'
+    when 4 then 'yellow_boy3.png'
     when 5 then 'yellow_boy5.png'
     end
   end
@@ -41,10 +41,10 @@ class HomeController < ApplicationController
         correct_answer = "俺以外"
         session[:correct_count] += 1 if correct_answer == params[:user_choice] 
       when 2
-        correct_answer = "俺"
+        correct_answer = "俺以外"
         session[:correct_count] += 1 if correct_answer == params[:user_choice] 
       when 3
-        correct_answer = "俺以外"
+        correct_answer = "俺"
         session[:correct_count] += 1 if correct_answer == params[:user_choice]
       when 4
         correct_answer = "俺以外"
@@ -72,6 +72,13 @@ class HomeController < ApplicationController
   end
 
   def result
+    if session[:correct_count] == 5
+      @message = 'オーラの消し方ググっても出てこないんだけど誰か知ってる人いる？'
+    elsif session[:correct_count] >= 3
+      @message = 'あのねぇ、俺が酒弱いんじゃなくて酒が強過ぎるの俺は弱くないの俺も強いけど酒はもっと強いの'
+    else
+      @message = '俺来た道戻らないから、覚える必要ない。自分の来た道突き進むだけだから'
+    end
     @result = session[:correct_count]
   end
 end
