@@ -47,7 +47,7 @@ class HomeController < ApplicationController
         correct_answer = "俺以外"
         session[:correct_count] += 1 if correct_answer == params[:user_choice]
       when 4
-        correct_answer = "俺"
+        correct_answer = "俺以外"
         session[:correct_count] += 1 if correct_answer == params[:user_choice] 
       when 5
         correct_answer = "ひさじゅやないかい！"
